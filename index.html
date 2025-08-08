@@ -1,0 +1,32 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CTF Login</title>
+</head>
+
+<body>
+  <h2>Welcome to the Web CTF</h2>
+  <p>Enter the secret key to begin:</p>
+  <input type="text" id="key">
+  <button onclick="checkKey()">Submit</button>
+  <p id="message"></p>
+
+  <script>
+    give_me_password
+    // password: resetMeNow -> reverse -> woNemTeser -> base64: d29OZW1UZXNlcg==
+    function checkKey() {
+      const input = document.getElementById("key").value;
+      const encoded = btoa(input.split('').reverse().join(''));
+      if (encoded === "ZHJvd3NzYXBfZW1fZXZpZw==") {
+        window.location.href = "portal.html";
+      } else {
+        document.getElementById("message").textContent = "Access Denied!";
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+console.log("Clue: Try /hidden-location-9834.html");

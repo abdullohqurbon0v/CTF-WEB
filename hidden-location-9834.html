@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Stage 2 - Math Cipher</title>
+</head>
+
+<body>
+  <h2>Stage 2 - Math Puzzle Cipher</h2>
+  <p>Solve the equation to find the code:</p>
+  <pre id="equation">x = ((13 * 3) + (7 * 2)) / 2</pre>
+  <input type="text" id="mathInput" placeholder="Enter the result">
+  <button onclick="checkMath()">Submit</button>
+  <p id="result"></p>
+
+  <script>
+    function checkMath() {
+      const userInput = document.getElementById("mathInput").value;
+      const correctAnswer = ((13 * 3) + (7 * 2)) / 2; // = (39 + 14)/2 = 26.5
+      if (parseFloat(userInput) === correctAnswer) {
+        document.getElementById("result").textContent = "Correct! Proceeding...";
+        setTimeout(() => {
+          window.location.href = "stage3.html";
+        }, 1000);
+      } else {
+        document.getElementById("result").textContent = "Incorrect. Try again.";
+      }
+    }
+  </script>
+</body>
+
+</html>
